@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        .container-main {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .card-display {
+            perspective: 100px;
+            min-height: 80px;
+            cursor: pointer;
+        }
+        
+        .flashcard {
+            width: 100%;
+            height: 400px;
+            background: #eeaaff;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            text-align: center;
+            padding: 40px;
+            color: #000;
+            border: 2px solid #333;
+            margin: 5px;
+        }
+        
+        .flashcard.back {
+            background: #99aaaa;
+            color: #fff;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            border-radius: 5px;
+            border: 2px solid #ddd;
+            margin: 2px;
+            color: #000;
+        }
+
+        input[type="text"]:focus {
+            border-color: #667eea;
+            outline: none;
+        }
+
+        .add-section {
+            background: white;
+            padding: 10px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid #000;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-main">
+        <h1 class="text-center text-dark mb-4 shheading">Flashcard App</h1>
+        
+        <div class="progress-section text-center">
+            <h4 id="progress">Card 0 / 0</h4>
+        </div>
+
+        <div class="card-display">
+            <div class="flashcard card" id="flashcard">Click to start</div>
+        </div>
+
+        <div class="nav-buttons text-center">
+            <button class="btn btn-light" id="prevBtn">← Previous</button>
+            <button class="btn btn-danger" id="deleteBtn">Delete Card</button>
+            <button class="btn btn-light" id="nextBtn">Next →</button>
+        </div>
+
+        <div class="add-section card">
+            <h5>Add New Flashcard</h5>
+            <div class="input-group">
+                <input type="text" id="questionInput" placeholder="Enter question..." />
+            </div>
+            <div class="input-group">
+                <input type="text" id="answerInput" placeholder="Enter answer..." />
+            </div>
+            <button class="btn btn-primary" id="addBtn">Add Flashcard</button>
+        </div>
+
+        <div id="cardsList" class="mt-4"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
